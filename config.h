@@ -5,7 +5,7 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "mono:pixelsize=12:antialias=true:autohint=true";
+static char *font = "SF Mono NerdFont:pixelsize=14:antialias=true:autohint=true";
 static char *font2[] = { "NotoColorEmoji:pixelsize=10:antialias=true:autohint=true" };
 static int borderpx = 2;
 
@@ -107,7 +107,7 @@ char *termname = "st-256color";
 unsigned int tabspaces = 8;
 
 /* bg opacity */
-float alpha = 0.8;
+float alpha = 1.0;
 float alphaOffset = 0.0;
 float alphaUnfocus;
 
@@ -144,7 +144,7 @@ static const char *colorname[] = {
  */
 unsigned int defaultfg = 259;
 unsigned int defaultbg = 258;
-unsigned int defaultcs = 256;
+unsigned int defaultcs = 259;
 unsigned int defaultrcs = 257;
 unsigned int background = 258;
 
@@ -255,11 +255,11 @@ static Shortcut shortcuts[] = {
 	{ TERMMOD,              XK_Prior,       zoom,           {.f = +1} },
 	{ TERMMOD,              XK_Next,        zoom,           {.f = -1} },
 	{ TERMMOD,              XK_Home,        zoomreset,      {.f =  0} },
-	{ TERMMOD,              XK_C,           clipcopy,       {.i =  0} },
-	{ TERMMOD,              XK_V,           clippaste,      {.i =  0} },
-	{ MODKEY,               XK_c,           clipcopy,       {.i =  0} },
+  { ControlMask|ShiftMask, XK_C,          clipcopy,       {.i =  0} },
+  { ControlMask|ShiftMask, XK_V,          clippaste,      {.i =  0} },
+	{ ControlMask|ShiftMask, XK_c,          clipcopy,       {.i =  0} },
 	{ ShiftMask,            XK_Insert,      clippaste,      {.i =  0} },
-	{ MODKEY,               XK_v,           clippaste,      {.i =  0} },
+  { ControlMask|ShiftMask, XK_v,          clippaste,      {.i =  0} },
 	{ ShiftMask,            XK_Insert,      selpaste,       {.i =  0} },
 	{ TERMMOD,              XK_Num_Lock,    numlock,        {.i =  0} },
 	{ ShiftMask,            XK_Page_Up,     kscrollup,      {.i = -1} },
